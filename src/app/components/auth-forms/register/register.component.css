@@ -1,0 +1,24 @@
+.login-form {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .07);
+  padding: 50px;
+  border-radius: 50px;
+  min-height: 555px;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .login-form {
+    margin-top: 100px;
+  }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .login-form {
+    margin-top: 100px;
+  }
+
+}
