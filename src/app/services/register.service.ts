@@ -11,6 +11,6 @@ export class RegisterService {
   }
 
   register(data) {
-    return this.http.post(`${environment.api_url}/users`, data);
+    return this.http.post(`/users`, data);
   }
 }

@@ -9,13 +9,13 @@ import {throwError} from 'rxjs';
 })
 export class LoginService {
 
-  private url = `${environment.api_url}/users/login`;
+  // private url = `${environment.api_url}/users/login`;
 
   constructor(private http: HttpClient) {
   }
 
   login(data: { email: string, password: string }) {
-    return this.http.post<any>(this.url, data)
+    return this.http.post<any>('http://localhost:8060/users/login', data)
       .pipe(catchError(this.errorHandler));
   }
 
