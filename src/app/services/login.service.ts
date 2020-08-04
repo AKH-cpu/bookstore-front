@@ -15,7 +15,7 @@ export class LoginService {
   }
 
   login(data: { email: string, password: string }) {
-    return this.http.post<any>('http://localhost:8060/users/login', data)
+    return this.http.post<any>('http://localhost:8090/users/login', data)
       .pipe(catchError(this.errorHandler));
   }
 

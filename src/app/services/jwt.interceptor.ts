@@ -14,7 +14,7 @@ export class JwtInterceptor implements HttpInterceptor {
   constructor(private tokenService: TokenService) {
   }
 
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+ /* intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
     request = request.clone({
       setHeaders: {
@@ -24,4 +24,11 @@ export class JwtInterceptor implements HttpInterceptor {
 
     return next.handle(request);
   }
+  */
+ intercept(req: HttpRequest<any>, next: HttpHandler) {
+  const xhr = req.clone({
+    headers: req.headers.set('X-Requested-With', 'XMLHttpRequest')
+  });
+  return next.handle(xhr);
+}
 }
