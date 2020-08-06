@@ -4,7 +4,7 @@
   "scripts": {
     "heroku-postbuild": "ng build --prod",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -13,6 +13,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.0.7",
+    "@angular/cli": "^10.0.5",
     "@angular/cdk": "^10.1.1",
     "@angular/common": "~10.0.7",
     "@angular/compiler": "~10.0.7",
@@ -34,7 +35,8 @@
     "path": "^0.12.7",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "typescript": "^3.6.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.6",
