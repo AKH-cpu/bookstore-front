@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {environment} from '../../environments/environment';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {catchError} from 'rxjs/operators';
 import {throwError} from 'rxjs';
 
@@ -9,13 +8,17 @@ import {throwError} from 'rxjs';
 })
 export class LoginService {
 
-  // private url = `${environment.api_url}/users/login`;
+  private url = 'http://localhost:8090/users/login';
+
 
   constructor(private http: HttpClient) {
   }
 
   login(data: { email: string, password: string }) {
-    return this.http.post<any>('http://localhost:8090/users/login', data)
+
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+
+    return this.http.post(this.url, data)
       .pipe(catchError(this.errorHandler));
   }
 

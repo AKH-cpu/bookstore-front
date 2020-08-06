@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {RegisterService} from '../../../services/register.service';
+import {RegisterService} from '../../services/register.service';
 
 @Component({
   selector: 'app-register',
@@ -14,12 +14,8 @@ export class RegisterComponent implements OnInit {
   constructor(private registerService: RegisterService) {
   }
 
-  get firstName() {
-    return this.registerForm.get('firstName');
-  }
-
-  get lastName() {
-    return this.registerForm.get('lastName');
+  get name() {
+    return this.registerForm.get('name');
   }
 
   get registerEmail() {
@@ -32,8 +28,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
-      firstName: new FormControl(null, Validators.required),
-      lastName: new FormControl(null, Validators.required),
+      name: new FormControl(null, [Validators.required, Validators.minLength(5)]),
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, Validators.required)
     });

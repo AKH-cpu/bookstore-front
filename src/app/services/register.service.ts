@@ -7,10 +7,12 @@ import {HttpClient} from '@angular/common/http';
 })
 export class RegisterService {
 
+  private url = 'http://localhost:8090/users';
+
   constructor(private http: HttpClient) {
   }
 
-  register(data) {
-    return this.http.post(`/users`, data);
+  register(data: { name: string, email: string, password: string }) {
+    return this.http.post(this.url, data);
   }
 }
