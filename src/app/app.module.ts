@@ -9,12 +9,12 @@ import {FooterComponent} from './partials/footer/footer.component';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import {SliderComponent} from './partials/slider/slider.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {AuthFormsComponent} from './components/auth-forms/auth-forms.component';
 import {RegisterComponent} from './components/register/register.component';
 import {LoginComponent} from './components/login/login.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {JwtInterceptor} from './services/jwt.interceptor';
+import {JwtInterceptor} from './controller/services/jwt.interceptor';
 import { BooksComponent } from './components/books/books.component';
+import { LanguagesComponent } from './components/languages/languages.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +25,9 @@ import { BooksComponent } from './components/books/books.component';
     SliderComponent,
     LoginComponent,
     RegisterComponent,
-    AuthFormsComponent,
     RegisterComponent,
-    BooksComponent
+    BooksComponent,
+    LanguagesComponent
   ],
   imports: [
     BrowserModule,

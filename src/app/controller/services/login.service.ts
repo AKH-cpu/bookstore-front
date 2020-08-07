@@ -15,9 +15,6 @@ export class LoginService {
   }
 
   login(data: { email: string, password: string }) {
-
-    const headers = new HttpHeaders({'Content-Type': 'application/json'});
-
     return this.http.post(this.url, data)
       .pipe(catchError(this.errorHandler));
   }

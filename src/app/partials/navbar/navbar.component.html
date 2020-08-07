@@ -58,17 +58,15 @@
           <li class="nav-item dropdown">
             <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Search by language</a>
             <ul class="dropdown-menu fade-up">
-              <li><a class="dropdown-item" href="#"> Arabic</a></li>
-              <li><a class="dropdown-item" href="#"> English </a></li>
-              <li><a class="dropdown-item" href="#"> French </a></li>
+              <li *ngFor="let language of languages"><a class="dropdown-item" routerLink="">{{language.name}}</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Categories</a>
             <ul class="dropdown-menu fade-up">
-              <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
-              <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
-              <li><a class="dropdown-item" href="#"> Submenu item 3 </a></li>
+              <li><a class="dropdown-item" href="#">Category 1</a></li>
+              <li><a class="dropdown-item" href="#">Category 2</a></li>
+              <li><a class="dropdown-item" href="#">Category 3</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -81,5 +79,4 @@
     </div>
   </nav>
 </header>
-
 
