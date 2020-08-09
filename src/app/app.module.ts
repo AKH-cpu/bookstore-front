@@ -15,6 +15,10 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {JwtInterceptor} from './controller/services/jwt.interceptor';
 import { BooksComponent } from './components/books/books.component';
 import { LanguagesComponent } from './components/languages/languages.component';
+import { ReadingComponent } from './svg/reading/reading.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+
+
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import { LanguagesComponent } from './components/languages/languages.component';
     RegisterComponent,
     RegisterComponent,
     BooksComponent,
-    LanguagesComponent
+    LanguagesComponent,
+    ReadingComponent,
+    CategoriesComponent,
+
   ],
   imports: [
     BrowserModule,

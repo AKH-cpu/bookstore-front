@@ -30,9 +30,7 @@ export class LanguageService {
   findAll() {
     return this.http.get<Array<Language>>(this.url).subscribe(
       data => {
-        this._languages = data;
-        console.log(this.languages);
-      }
+        this._languages = data;      }
     );
   }
 }

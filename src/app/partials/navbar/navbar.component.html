@@ -61,6 +61,7 @@
               <li *ngFor="let language of languages"><a class="dropdown-item" routerLink="">{{language.name}}</a></li>
             </ul>
           </li>
+          <!--
           <li class="nav-item dropdown">
             <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Categories</a>
             <ul class="dropdown-menu fade-up">
@@ -69,6 +70,29 @@
               <li><a class="dropdown-item" href="#">Category 3</a></li>
             </ul>
           </li>
+          -->
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Categories</a>
+            <div class="dropdown-menu megamenu" role="menu">
+              <div class="row">
+
+                <div class="col-md-3" *ngFor="let category of categories">
+                  <div class="col-megamenu">
+                    <h6 class="title text-primary">{{category.name}}</h6>
+                    <ul class="list-unstyled mt-3 mb-5">
+                      <li class="nav-item" *ngFor="let sub of category.subCategories">
+                        <a href="#" class="nav-link text-secondary ">{{sub.name}}</a>
+                      </li>
+                    </ul>
+                  </div>  <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+
+
+              </div><!-- end row -->
+            </div> <!-- dropdown-mega-menu.// -->
+          </li>
+
+
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>
           </li>

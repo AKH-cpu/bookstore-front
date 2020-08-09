@@ -6,3 +6,6 @@ $(window).on('load', function() {
   $("#preloder").delay(400).fadeOut("slow");
 
 });
+$(document).on('click', '.dropdown-menu', function (e) {
+  e.stopPropagation();
+});

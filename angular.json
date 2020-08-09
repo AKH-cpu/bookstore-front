@@ -38,7 +38,7 @@
               "./node_modules/jquery/dist/jquery.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js",
               "src/assets/js/main.js",
-              "src/assets/js/jquery.slicknav.min.js",
+              "src/assets/js/jquery.slicknav.min.js"
             ]
           },
           "configurations": {
@@ -130,8 +130,13 @@
               "devServerTarget": "bookstore-front:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "ngx-gh:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "bookstore-front"
 }
