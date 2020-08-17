@@ -15,8 +15,6 @@ import {SubCategory} from '../../controller/models/sub-category';
 })
 export class NavbarComponent implements OnInit {
 
-  categories: Category[] = [];
-
   constructor(private languageService: LanguageService,
               private categoryService: CategoryService) {
   }
@@ -25,6 +23,10 @@ export class NavbarComponent implements OnInit {
     return this.languageService.languages;
 
   }
+
+
+  categories: Category[] = [];
+
 
   ngOnInit(): void {
     this.findAllLanguages();

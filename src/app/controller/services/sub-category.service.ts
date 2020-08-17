@@ -7,7 +7,8 @@ import {SubCategory} from '../models/sub-category';
 })
 export class SubCategoryService {
 
-  private url = 'http://localhost:8090/subcategories';
+  // private url = 'http://localhost:8090/subcategories';
+  private url = 'https://kitabi-backend.herokuapp.com/subcategories';
 
 
   private subCategories: Array<SubCategory>;

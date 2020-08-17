@@ -11,13 +11,14 @@ import {SliderComponent} from './partials/slider/slider.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RegisterComponent} from './components/register/register.component';
 import {LoginComponent} from './components/login/login.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {JwtInterceptor} from './controller/services/jwt.interceptor';
+import { HttpClientModule} from '@angular/common/http';
 import { BooksComponent } from './components/books/books.component';
 import { LanguagesComponent } from './components/languages/languages.component';
 import { ReadingComponent } from './svg/reading/reading.component';
 import { CategoriesComponent } from './components/categories/categories.component';
-
+import {AdminModule} from './admin/admin.module';
+import {AdminRoutingModule} from './admin/admin-routing.module';
+import { BestsellersComponent } from './components/books/bestsellers/bestsellers.component';
 
 
 @NgModule({
@@ -29,11 +30,12 @@ import { CategoriesComponent } from './components/categories/categories.componen
     SliderComponent,
     LoginComponent,
     RegisterComponent,
-    RegisterComponent,
     BooksComponent,
     LanguagesComponent,
     ReadingComponent,
     CategoriesComponent,
+    BestsellersComponent,
+
 
   ],
   imports: [
@@ -42,7 +44,8 @@ import { CategoriesComponent } from './components/categories/categories.componen
     FormsModule,
     MDBBootstrapModule.forRoot(),
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AdminRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
