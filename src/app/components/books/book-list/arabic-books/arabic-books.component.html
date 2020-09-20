@@ -1,0 +1,63 @@
+
+<div class="container-fluid mt-2">
+  <div class="row ">
+    <div class="col-12 col-md-3 col-sm-12 col-xs-12" *ngFor="let book of arabicBooks  | paginate: { id: 'arabic',
+                                                      itemsPerPage: 4,
+                                                      currentPage: page,
+                                                      totalItems: totalRecords }">
+
+      <div class="card pl-4 pr-3 py-2 mt-3" style="min-height: 410.15px">
+        <div class="div1 row py-4 px-2 text-center">
+          <div class="col-8 col-auto d-flex justify-content-center text-center"><img
+            src='{{ "assets/img/books/" + book.image  }}' height="200.13px" width="150%" alt=""></div>
+          <div class="col-3 d-flex flex-column pl-4"><i class="fa fa-heart fa-lg mt-4 mb-4"
+                                                        aria-hidden="true"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                 id="Capa_1" x="0px" y="0px" viewBox="0 0 426.667 426.667"
+                 style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve" width="20px"
+                 height="20px" class=""><g><g>
+	<g>
+		<g>
+			<path
+        d="M128,341.333c-23.573,0-42.453,19.093-42.453,42.667s18.88,42.667,42.453,42.667c23.573,0,42.667-19.093,42.667-42.667     S151.573,341.333,128,341.333z"
+        data-original="#000000" class="active-path" data-old_color="#000000" fill="#EB6864"/>
+      <path
+        d="M151.467,234.667H310.4c16,0,29.973-8.853,37.333-21.973L424,74.24c1.707-2.987,2.667-6.507,2.667-10.24     c0-11.84-9.6-21.333-21.333-21.333H89.92L69.653,0H0v42.667h42.667L119.36,204.48l-28.8,52.267     c-3.307,6.187-5.227,13.12-5.227,20.587C85.333,300.907,104.427,320,128,320h256v-42.667H137.067     c-2.987,0-5.333-2.347-5.333-5.333c0-0.96,0.213-1.813,0.64-2.56L151.467,234.667z"
+        data-original="#000000" class="active-path" data-old_color="#000000" fill="#EB6864"/>
+      <path
+        d="M341.333,341.333c-23.573,0-42.453,19.093-42.453,42.667s18.88,42.667,42.453,42.667     C364.907,426.667,384,407.573,384,384S364.907,341.333,341.333,341.333z"
+        data-original="#000000" class="active-path" data-old_color="#000000" fill="#EB6864"/>
+		</g>
+	</g>
+</g></g> </svg>
+          </div>
+
+        </div>
+        <div class="py-2">
+          <div class="row">
+            <div class="col-md-12"><h5>{{book.title}}</h5></div>
+            <div class="col-md-12"><p>{{book.author.name}}</p></div>
+            <div class="col-md-12"><h5 class="float-left text-primary">{{book.price}} DH</h5></div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-center mt-3">
+  <pagination-controls id="foo"
+                       (pageChange)="page= $event"
+                       maxSize="1"
+                       directionLinks="true"
+                       autoHide="true"
+                       responsive="true"
+                       previousLabel="Previous"
+                       nextLabel="Next"
+                       screenReaderPaginationLabel="Pagination"
+                       screenReaderPageLabel="page"
+                       screenReaderCurrentLabel="You're on page">
+  </pagination-controls>
+</div>
+

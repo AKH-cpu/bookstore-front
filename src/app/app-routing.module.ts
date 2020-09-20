@@ -4,6 +4,7 @@ import {PageNotFoundComponent} from './partials/page-not-found/page-not-found.co
 import {LoginComponent} from './components/login/login.component';
 import {BooksComponent} from './components/books/books.component';
 import {RegisterComponent} from './components/register/register.component';
+import {HomeComponent} from './admin/home/home.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'home', component: BooksComponent},
+  {path: 'admin', component: HomeComponent, data: {navbar: false, footer: false}},
   {path: '**', component: PageNotFoundComponent}
 
 ];

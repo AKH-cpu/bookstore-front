@@ -11,15 +11,21 @@ import {SliderComponent} from './partials/slider/slider.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RegisterComponent} from './components/register/register.component';
 import {LoginComponent} from './components/login/login.component';
-import { HttpClientModule} from '@angular/common/http';
-import { BooksComponent } from './components/books/books.component';
-import { LanguagesComponent } from './components/languages/languages.component';
-import { ReadingComponent } from './svg/reading/reading.component';
-import { CategoriesComponent } from './components/categories/categories.component';
+import {HttpClientModule} from '@angular/common/http';
+import {BooksComponent} from './components/books/books.component';
+import {LanguagesComponent} from './components/languages/languages.component';
+import {ReadingComponent} from './svg/reading/reading.component';
+import {CategoriesComponent} from './components/categories/categories.component';
 import {AdminModule} from './admin/admin.module';
 import {AdminRoutingModule} from './admin/admin-routing.module';
-import { BestsellersComponent } from './components/books/bestsellers/bestsellers.component';
+import {BestsellersComponent} from './components/books/bestsellers/bestsellers.component';
+import {BookListComponent} from './components/books/book-list/book-list.component';
 
+import {NgxPaginationModule} from 'ngx-pagination';
+import { AllBooksComponent } from './components/books/book-list/all-books/all-books.component';
+import { ArabicBooksComponent } from './components/books/book-list/arabic-books/arabic-books.component';
+import { EnglishBooksComponent } from './components/books/book-list/english-books/english-books.component';
+import { FrenchBooksComponent } from './components/books/book-list/french-books/french-books.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +41,11 @@ import { BestsellersComponent } from './components/books/bestsellers/bestsellers
     ReadingComponent,
     CategoriesComponent,
     BestsellersComponent,
+    BookListComponent,
+    AllBooksComponent,
+    ArabicBooksComponent,
+    EnglishBooksComponent,
+    FrenchBooksComponent,
 
 
   ],
@@ -46,9 +57,10 @@ import { BestsellersComponent } from './components/books/bestsellers/bestsellers
     ReactiveFormsModule,
     HttpClientModule,
     AdminRoutingModule,
+    NgxPaginationModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: []
 })
 export class AppModule {
 }

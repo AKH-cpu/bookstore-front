@@ -4,7 +4,7 @@
 </div>
 
 <!-- Header section -->
-<header class="header-section">
+<header class="header-section" *ngIf="visible">
   <div class="header-top">
     <div class="container">
       <div class="row">
@@ -58,7 +58,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Search by language</a>
             <ul class="dropdown-menu fade-up">
-              <li *ngFor="let language of languages"><a class="dropdown-item" routerLink="">{{language.name}}</a></li>
+              <li *ngFor="let language of languages" class="nav-item"><a class="nav-link text-secondary" routerLink="">{{language.name}}</a></li>
             </ul>
           </li>
           <!--
@@ -79,7 +79,7 @@
                 <div class="col-md-3" *ngFor="let category of categories">
                   <div class="col-megamenu">
                     <h6 class="title text-primary">{{category.name}}</h6>
-                    <ul class="list-unstyled mt-3 mb-5">
+                    <ul class="list-unstyled mt-3 mb-5 ul-cate">
                       <li class="nav-item" *ngFor="let sub of category.subCategories">
                         <a href="#" class="nav-link text-secondary ">{{sub.name}}</a>
                       </li>

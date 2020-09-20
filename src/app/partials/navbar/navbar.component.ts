@@ -6,7 +6,8 @@ import {Language} from '../../controller/models/language';
 import {Category} from '../../controller/models/category';
 import {CategoryService} from '../../controller/services/category.service';
 import {SubCategoryService} from '../../controller/services/sub-category.service';
-import {SubCategory} from '../../controller/models/sub-category';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
+import {filter, map, mergeMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-navbar',
@@ -15,8 +16,15 @@ import {SubCategory} from '../../controller/models/sub-category';
 })
 export class NavbarComponent implements OnInit {
 
+  visible: boolean;
+  viewedPage: string;
+
+
   constructor(private languageService: LanguageService,
-              private categoryService: CategoryService) {
+              private categoryService: CategoryService,
+              private router: Router,
+              private activatedRoute: ActivatedRoute) {
+    this.visible = true;
   }
 
   get languages(): Array<Language> {
@@ -29,6 +37,7 @@ export class NavbarComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.init();
     this.findAllLanguages();
     this.findAllCategories();
 
@@ -45,4 +54,37 @@ export class NavbarComponent implements OnInit {
     );
   }
 
+  init() {
+    this.router.events
+      .pipe(
+        filter(event => event instanceof NavigationEnd),
+        map(() => this.activatedRoute),
+        map(route => {
+          while (route.firstChild) {
+            route = route.firstChild;
+          }
+          return route;
+        }),
+      )
+      .pipe(
+        filter(route => route.outlet === 'primary'),
+        mergeMap(route => route.data),
+      )
+      .subscribe(event => {
+        this.showNavBar(event.navbar);
+      });
+
+  }
+
+
+  showNavBar(event) {
+    if (event === false) {
+      this.visible = false;
+    } else if (event === true) {
+      this.visible = true;
+    } else {
+      this.visible = this.visible;
+    }
+
+  }
 }

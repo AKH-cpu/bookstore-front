@@ -1,0 +1,28 @@
+.benefit-items {
+  border-top: 1px solid #ebebeb;
+  border-left: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+
+  margin-top: 45px;
+}
+
+.benefit-items .single-benefit {
+  padding: 30px 55px 25px;
+  border-right: 1px solid #ebebeb;
+}
+
+.benefit-items .single-benefit .sb-icon {
+  float: left;
+  margin-right: 20px;
+}
+
+.benefit-items .single-benefit .sb-text {
+  display: table;
+}
+
+.benefit-img {
+  vertical-align: middle;
+  border-style: none;
+  width:50px ;
+  height: 50px;
+}

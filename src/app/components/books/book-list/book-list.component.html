@@ -1,0 +1,74 @@
+<div class="row mt-3">
+  <div class="col-md-2 col-sm-12 text-center mt-4" *ngFor="let book of childrenBooks">
+    <img src='{{ "assets/img/books/" + book.image  }}' alt="thumbnail"
+         class="img-thumbnail"
+         style="max-height: 187px; max-width: 162px;">
+    <div class="details text-center">
+      <div class="row">
+        <div class="col-md-12" style="max-height: 100px"><a href="" class="nav-link text-info">{{book.title}}</a></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<section id="tabs" class="d-none">
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <nav style="min-width: 1140px">
+        <div class="nav nav-tabs nav-fill col-md-12 col-sm-12 col-12" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active text-primary" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+             role="tab"
+             aria-controls="nav-home" aria-selected="true">All books</a>
+          <a class="nav-item nav-link text-primary" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+             role="tab"
+             aria-controls="nav-profile" aria-selected="false">Arabic books</a>
+          <a class="nav-item nav-link text-primary" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
+             role="tab"
+             aria-controls="nav-contact" aria-selected="false">English books</a>
+          <a class="nav-item nav-link text-primary" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab"
+             aria-controls="nav-about" aria-selected="false">French books</a>
+        </div>
+      </nav>
+
+      <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+
+        <div class="tab-pane fade show active col-md-12 col-sm-12 col-12" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+          <app-all-books></app-all-books>
+        </div>
+
+        <div class="tab-pane fade col-md-12 col-sm-12 col-12" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <app-arabic-books></app-arabic-books>
+        </div>
+
+        <div class="tab-pane fade col-md-12 col-sm-12 col-12" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+          <app-english-books></app-english-books>
+        </div>
+
+        <div class="tab-pane fade col-md-12 col-sm-12 col-12" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+        <app-french-books></app-french-books>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<div class="container p-3 mt-5">
+  <nav class="nav nav-pills flex-column flex-md-row slide-annonce ml-3">
+    <a href="#all" class="nav-link active w-25" data-toggle="tab">All books</a>
+    <a href="#arabic" class="nav-link w-25" data-toggle="tab">Arabic books</a>
+    <a href="#english" class="nav-link w-25" data-toggle="tab">English books</a>
+    <a href="#french" class="nav-link w-25" data-toggle="tab">French books</a>
+  </nav>
+  <div class="tab-content">
+    <div class="tab-pane active" id="all"><app-all-books></app-all-books></div>
+    <div class="tab-pane" id="arabic"><app-arabic-books></app-arabic-books></div>
+    <div class="tab-pane" id="english"><app-english-books></app-english-books></div>
+    <div class="tab-pane" id="french"><app-french-books></app-french-books></div>
+  </div>
+</div>

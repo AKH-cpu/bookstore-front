@@ -10,10 +10,10 @@ import {Book} from '../../../controller/models/book';
 export class BestsellersComponent implements OnInit {
 
   books: Book[] = [];
+  imgSrc = '/assets/img/books';
 
   constructor(private bookService: BookService) {
   }
-
 
 
   ngOnInit(): void {
@@ -22,10 +22,12 @@ export class BestsellersComponent implements OnInit {
 
   getBestSellerBooks() {
     this.bookService.getBestSellerBooks().subscribe(
-      data => this.books = data
+      data => {
+        this.books = data;
+        console.log(data);
+      }
     );
   }
-
 
 
 }

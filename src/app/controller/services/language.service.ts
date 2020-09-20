@@ -7,8 +7,8 @@ import {Language} from '../models/language';
 })
 export class LanguageService {
 
- // private url = 'http://localhost:8090/languages';
-  private url = 'https://kitabi-backend.herokuapp.com/languages';
+ private url = 'http://localhost:8090/languages';
+  //  private url = 'https://kitabi-backend.herokuapp.com/languages';
 
   // tslint:disable-next-line:variable-name
   private _languages: Array<Language>;
